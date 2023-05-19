@@ -1,0 +1,32 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 20px;
+    padding: 0;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    height: 50rem;
+    width: 50rem;
+    min-height: 20rem;
+    min-width: 20rem;
+    background-color: white;
+    outline: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    outline: 1px solid black;
+    height: calc(100% / 3);
+    width: calc(100% / 3);
+}
