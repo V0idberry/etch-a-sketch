@@ -13,20 +13,44 @@ body {
     align-items: center;
 }
 
+.main-container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
-    height: 50rem;
     width: 50rem;
-    min-height: 20rem;
     min-width: 20rem;
+    aspect-ratio: 1 / 1;
     background-color: white;
-    outline: 2px solid black;
+    outline: 2px solid gray;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 2rem;
 }
 
 .box {
-    outline: 1px solid black;
+    outline: 1px solid gray;
     height: calc(100% / 3);
     width: calc(100% / 3);
+}
+
+.slider {
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#value {
+    font-size: 1.5rem;
+}
+
+#range {
+    width: 100%;
 }
