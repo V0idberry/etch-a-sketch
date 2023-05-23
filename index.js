@@ -1,14 +1,7 @@
 const grid = document.querySelector(".grid");
+const coloredBox = document.querySelector(".box");
 const slider = document.getElementById("range");
 const displayValue = document.getElementById("value");
-
-displayValue.innerHTML = 'Please select the desired grid size.'
-
-slider.addEventListener('input', function() {
-    clearGrid();
-    createGrid(slider.value);
-    displayValue.innerHTML = `Current grid size: ${slider.value} x ${slider.value}`;
-})
 
 function createGrid(gridSize) {
     for (i = 0; i < gridSize * gridSize; i++) {
@@ -17,6 +10,9 @@ function createGrid(gridSize) {
         newBox.classList.add("box");
         newBox.style.height = `calc(100% / ${gridSize})`;
         newBox.style.width = `calc(100% / ${gridSize})`;
+        newBox.addEventListener('mouseover', function () {
+            newBox.classList.add("box-black");
+        })
     }
 }
 
@@ -25,3 +21,11 @@ function clearGrid() {
         grid.firstChild.remove();
     }
 }
+
+displayValue.innerHTML = 'Please select the desired grid size.'
+
+slider.addEventListener('input', function() {
+    clearGrid();
+    createGrid(slider.value);
+    displayValue.innerHTML = `Current grid size: ${slider.value} x ${slider.value}`;
+})

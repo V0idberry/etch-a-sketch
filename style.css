@@ -37,6 +37,10 @@ body {
     outline: 1px solid gray;
 }
 
+.box-black {
+    background-color: black;
+}
+
 .slider {
     width: 40rem;
     display: flex;
