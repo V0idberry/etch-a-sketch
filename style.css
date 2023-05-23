@@ -35,8 +35,6 @@ body {
 
 .box {
     outline: 1px solid gray;
-    height: calc(100% / 3);
-    width: calc(100% / 3);
 }
 
 .slider {
