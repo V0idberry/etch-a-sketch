@@ -2,6 +2,7 @@ const grid = document.querySelector(".grid");
 const coloredBox = document.querySelector(".box");
 const slider = document.getElementById("range");
 const displayValue = document.getElementById("value");
+const clear = document.getElementById("btnClear");
 
 function createGrid(gridSize) {
     for (i = 0; i < gridSize * gridSize; i++) {
@@ -22,10 +23,10 @@ function clearGrid() {
     }
 }
 
-displayValue.innerHTML = 'Please select the desired grid size.'
+displayValue.innerHTML = '1 x 1'
 
 slider.addEventListener('input', function() {
     clearGrid();
     createGrid(slider.value);
-    displayValue.innerHTML = `Current grid size: ${slider.value} x ${slider.value}`;
+    displayValue.innerHTML = `${slider.value} x ${slider.value}`;
 })

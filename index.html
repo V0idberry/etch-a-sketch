@@ -5,17 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap" rel="stylesheet">
     <script src="index.js" defer></script>
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <div class="main-container">
+    <header class="header">
+        <h1>Etch-a-Sketch</h1>
+    </header>
+    <main class="main">
+        <div class="navigation">
+            <button type="button" class="btn">Rainbow</button>
+            <button type="button" class="btn clear" id="btnClear">Clear</button>
+            <div class="slider">
+                <input type="range" id="range" class="range" min="2" max="50" value="2">
+                <span id="value" class="value"></span>
+            </div>
+        </div>
         <div class="grid">
         </div>
-        <div class="slider">
-            <input type="range" id="range" min="2" max="50" value="2">
-            <span id="value"></span>
-        </div>
-    </div>
+    </main>
 </body>
 </html>
