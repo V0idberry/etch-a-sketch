@@ -1,8 +1,8 @@
 const grid = document.querySelector(".grid");
-const coloredBox = document.querySelector(".box");
+const rainbow = document.querySelector(".bowBtn");
 const slider = document.getElementById("range");
 const displayValue = document.getElementById("value");
-const clear = document.getElementById("btnClear");
+const resetBtn = document.getElementById("clearBtn");
 
 function createGrid(gridSize) {
     for (i = 0; i < gridSize * gridSize; i++) {
@@ -23,7 +23,25 @@ function clearGrid() {
     }
 }
 
-displayValue.innerHTML = '1 x 1'
+function reset() {
+    let boxes = document.querySelectorAll("div.box");
+
+    boxes.forEach(function(box) {
+        box.classList.remove("box-black");
+    })
+}
+
+rainbow.addEventListener('click', function(e) {
+    rainbow.classList.toggle("rainbow");
+
+    console.log(e);
+});
+
+resetBtn.addEventListener('click', function() {
+    reset();
+});
+
+displayValue.innerHTML = 'Select Grid Size'
 
 slider.addEventListener('input', function() {
     clearGrid();
