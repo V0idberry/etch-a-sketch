@@ -46,15 +46,13 @@ rainbow.addEventListener('click', function() {
     } else {
         rainbowMode = true;
     }
-
-    console.log(rainbowMode);
 });
 
 resetBtn.addEventListener('click', function() {
     reset();
 });
 
-displayValue.innerHTML = 'Select Grid Size'
+displayValue.innerHTML = 'Grid Size'
 
 slider.addEventListener('input', function() {
     clearGrid();
