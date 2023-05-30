@@ -4,6 +4,9 @@ const slider = document.getElementById("range");
 const displayValue = document.getElementById("value");
 const resetBtn = document.getElementById("clearBtn");
 
+const colors = ["#fbf8cc", "#fde4cf", "#ffcfd2", "#f1c0e8", "#cfbaf0", "#a3c4f3", "#90dbf4", "#8eecf5", "#98f5e1", "#b9fbc0"];
+let rainbowMode = false;
+
 function createGrid(gridSize) {
     for (i = 0; i < gridSize * gridSize; i++) {
         const newBox = document.createElement("div");
@@ -12,7 +15,11 @@ function createGrid(gridSize) {
         newBox.style.height = `calc(100% / ${gridSize})`;
         newBox.style.width = `calc(100% / ${gridSize})`;
         newBox.addEventListener('mouseover', function () {
-            newBox.classList.add("box-black");
+            if (rainbowMode == false) {
+                newBox.style.backgroundColor = "black";
+            } else {
+                newBox.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            }
         })
     }
 }
@@ -27,14 +34,20 @@ function reset() {
     let boxes = document.querySelectorAll("div.box");
 
     boxes.forEach(function(box) {
-        box.classList.remove("box-black");
+        box.style.backgroundColor = null;
     })
 }
 
-rainbow.addEventListener('click', function(e) {
+rainbow.addEventListener('click', function() {
     rainbow.classList.toggle("rainbow");
 
-    console.log(e);
+    if (rainbowMode == true) {
+        rainbowMode = false;
+    } else {
+        rainbowMode = true;
+    }
+
+    console.log(rainbowMode);
 });
 
 resetBtn.addEventListener('click', function() {
